@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import { DefaultCarousel } from './src/components/Carousel';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>MyTinerary</Text>
+      <DefaultCarousel />
     </SafeAreaView>
   );
 }
