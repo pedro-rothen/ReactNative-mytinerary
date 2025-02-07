@@ -2,10 +2,14 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import { Hero } from '@/components/hero';
+import { DefaultCarousel } from '@/components/defaultCarousel';
 
-export default function TabOneScreen() {
+export default function Home() {
   return (
     <View style={styles.container}>
+      <Hero title="MyTinerary" subtitle="Find your perfect travel itinerary" />
+      <DefaultCarousel />
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
