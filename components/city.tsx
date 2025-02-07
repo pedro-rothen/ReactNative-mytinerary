@@ -1,10 +1,5 @@
 import { ImageBackground, Text, View } from "react-native";
 
-interface CityProps {
-  name: string;
-  imageUrl: string;
-}
-
 export function City(item: CityProps) {
   return (
     <View>
