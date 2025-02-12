@@ -1,11 +1,11 @@
 import { View, Text, ImageBackground } from 'react-native';
 
-export default function CityCard(item: CityProps) {
+export default function CityCard(item: City) {
   return (
     <View>
       <ImageBackground
         style={{ width: 300, height: 300 }}
-        source={{ uri: item.imageUrl }}
+        source={{ uri: item.image }}
         resizeMode="cover">
         <View>
           <Text>{item.name}</Text>
