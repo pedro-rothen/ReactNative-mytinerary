@@ -2,13 +2,14 @@ import { ImageBackground, Text, View } from "react-native";
 
 export function City(item: City) {
   return (
-    <View>
-        <Text>{item.name}</Text>
+    <View className="bg-blue-500">
         <ImageBackground 
-            style={{ width: 300, height: 300 }}
+            className="w-full h-full justify-center items-center"
             source={{ uri: item.image }}
-            resizeMode="contain"
-            />
+            resizeMode="cover">
+                <View className="absolute top-0 left-0 w-full h-full bg-black/50" />
+                <Text className="text-white text-4xl font-bold">{item.name}</Text>
+            </ImageBackground>
     </View>
   );
 }

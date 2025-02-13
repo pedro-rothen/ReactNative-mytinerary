@@ -4,9 +4,9 @@ import { DefaultCarousel } from '@/components/defaultCarousel';
 
 export default function Home() {
   return (
-    <View>
+    <View className="flex flex-col w-full bg-green-500">
+      <DefaultCarousel/>
       <Hero title="MyTinerary" subtitle="Find your perfect travel itinerary" />
-      <DefaultCarousel />
     </View>
   );
 }

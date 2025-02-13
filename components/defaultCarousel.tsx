@@ -2,7 +2,8 @@ import Carousel from "react-native-reanimated-carousel";
 import { City } from "./city";
 import { useEffect, useState } from "react";
 import { fetchCities } from "../services/cities";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, Dimensions } from "react-native";
+const { width } = Dimensions.get("window");
 
 export function DefaultCarousel() {
     const [cities, setCities] = useState<City[] | null>(null);
@@ -34,8 +35,8 @@ export function DefaultCarousel() {
             autoPlay
             data={cities}
             scrollAnimationDuration={1000}
-            width={300}
-            height={300}
+            width={width}
+            height={width*1.3}
             renderItem={({ item }) => City(item)}
             />
         );

@@ -7,7 +7,7 @@ interface HeroProps {
 
 export function Hero({ title, subtitle }: HeroProps) {
     return (
-        <View>
+        <View className="bg-yellow-500">
             <Text>{title}</Text>
             <Text>{subtitle}</Text>
             <Button title="Explore" />
