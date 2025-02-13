@@ -1,3 +1,4 @@
+import "@/global.css"
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
@@ -7,6 +8,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { verifyInstallation } from 'nativewind';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -41,6 +43,8 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
+
+  verifyInstallation();
 
   return <RootLayoutNav />;
 }

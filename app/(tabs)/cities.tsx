@@ -5,7 +5,6 @@ import { Link } from 'expo-router';
 import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
 import { fetchCities } from '@/services/cities';
-import { SearchBar } from 'react-native-screens';
 
 export default function Cities() {
   const [cities, setCities] = useState<City[] | null>(null);
@@ -35,6 +34,7 @@ export default function Cities() {
     return (
       <View>
         <TextInput
+          className="h-10 border border-gray-300 rounded px-2 mb-4"
           placeholder="Buscar"
           value={search}
           onChangeText={setSearch}
