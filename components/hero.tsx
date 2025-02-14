@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { View, Button, Text } from "react-native";
 
 interface HeroProps {
@@ -7,10 +8,12 @@ interface HeroProps {
 
 export function Hero({ title, subtitle }: HeroProps) {
     return (
-        <View className="bg-yellow-500">
-            <Text>{title}</Text>
-            <Text>{subtitle}</Text>
-            <Button title="Explore" />
+        <View className="bg-white-500 justify-center items-center p-4">
+            <Text className="text-2xl font-bold text-center mb-2">{title}</Text>
+            <Text className="text-lg text-center mb-4">{subtitle}</Text>
+            <Link href="/cities">
+                <Button title="Explore" />
+            </Link>
         </View>
     );
 }
