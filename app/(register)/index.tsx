@@ -6,6 +6,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Link } from 'expo-router';
+import { registerUser } from '@/services/user/UserAPI';
 
 const schema = z.object({
     email: z.string().email('Invalid email address'),
@@ -22,15 +23,22 @@ export default function RegisterScreen() {
       resolver: zodResolver(schema),
     });
   
-    const onSubmit = (data: { email: string; password: string; confirmPassword: string }) => {
-      // Simulate registration logic
-      if (data.email && data.password) {
-        dispatch(login());
-        Alert.alert('Registration Successful', 'You have successfully registered.');
-      } else {
-        Alert.alert('Registration Failed', 'Please fill in all fields.');
-      }
-    };
+    const onSubmit = async (data: { email: string; password: string; confirmPassword: string }) => {
+        try {
+          const userData = {
+            first_name: 'Rusty',
+            last_name: 'NULL',
+            email: data.email,
+            password: data.password,
+            country: 'CHILE',
+            description: 'description'
+          };
+          const response = await registerUser(userData);
+          //navigation.navigate('login');
+        } catch (error) {
+          Alert.alert('Registration Failed', 'An error occurred during registration.');
+        }
+      };
   
     return (
       <View className='flex-1 justify-center items-center p-4'>
